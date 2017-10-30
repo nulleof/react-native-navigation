@@ -649,9 +649,9 @@ function getLeftButtonDeprecated(screen) {
 
 function getRightButtons(screen) {
   if (screen.navigatorButtons && screen.navigatorButtons.rightButtons) {
-    return screen.navigatorButtons.rightButtons;
+    return _.cloneDeep(screen.navigatorButtons.rightButtons);
   } else if (screen.rightButtons) {
-    return screen.rightButtons
+    return _.cloneDeep(screen.rightButtons);
   }
 
   const Screen = Navigation.getRegisteredScreen(screen.screen);
